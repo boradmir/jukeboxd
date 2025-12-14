@@ -315,7 +315,7 @@ MIT License © 2024 Jukeboxd
 
 <br>
 
-**Built with ❤️ and 🎵 by Jukeboxd Team**
+**Built with ❤️ and 🎵 by Bora Demir**
 
 <sub>React • Node.js • SQLite • Spotify API</sub>
 
