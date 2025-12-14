@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14181c"/>
+      <stop offset="100%" stop-color="#1a1f25"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#ff6b9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative blurs -->
+  <circle cx="80" cy="80" r="60" fill="#00d4ff" opacity="0.08"/>
+  <circle cx="320" cy="220" r="80" fill="#ff6b9d" opacity="0.08"/>
+  
+  <!-- Magnifying glass -->
+  <g transform="translate(200, 130)">
+    <!-- Glass circle -->
+    <circle r="50" fill="none" stroke="url(#accentGrad)" stroke-width="4" filter="url(#glow)"/>
+    <circle r="45" fill="#14181c" opacity="0.5"/>
+    <!-- Handle -->
+    <line x1="35" y1="35" x2="70" y2="70" stroke="url(#accentGrad)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Broken vinyl pieces inside magnifying glass -->
+  <g transform="translate(200, 130)">
+    <path d="M-15 -20 L0 -10 L-20 5 Z" fill="#2a2a3e" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
+    <path d="M5 -15 L20 -5 L10 10 Z" fill="#2a2a3e" stroke="#ff6b9d" stroke-width="1" opacity="0.7"/>
+    <path d="M-10 10 L5 5 L0 25 Z" fill="#2a2a3e" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
+  </g>
+  
+  <!-- X marks -->
+  <g transform="translate(280, 80)" stroke="url(#accentGrad)" stroke-width="2" opacity="0.3">
+    <line x1="-8" y1="-8" x2="8" y2="8"/>
+    <line x1="8" y1="-8" x2="-8" y2="8"/>
+  </g>
+  <g transform="translate(120, 200)" stroke="url(#accentGrad)" stroke-width="2" opacity="0.2">
+    <line x1="-6" y1="-6" x2="6" y2="6"/>
+    <line x1="6" y1="-6" x2="-6" y2="6"/>
+  </g>
+</svg>

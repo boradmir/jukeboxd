@@ -1,0 +1,89 @@
+/* ============================================
+   Tooltip Component Styles
+   ============================================ */
+
+.tooltip-trigger {
+    display: inline-flex;
+    cursor: help;
+}
+
+.tooltip {
+    position: fixed;
+    z-index: var(--z-tooltip);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    pointer-events: none;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Position adjustments */
+.tooltip-top {
+    transform: translate(-50%, -100%);
+}
+
+.tooltip-bottom {
+    transform: translate(-50%, 0);
+}
+
+.tooltip-left {
+    transform: translate(-100%, -50%);
+}
+
+.tooltip-right {
+    transform: translate(0, -50%);
+}
+
+/* Arrow */
+.tooltip-arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--color-bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+}
+
+.tooltip-top .tooltip-arrow {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-top: none;
+    border-left: none;
+}
+
+.tooltip-bottom .tooltip-arrow {
+    top: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.tooltip-left .tooltip-arrow {
+    right: -5px;
+    top: 50%;
+    margin-top: -4px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.tooltip-right .tooltip-arrow {
+    left: -5px;
+    top: 50%;
+    margin-top: -4px;
+    border-top: none;
+    border-right: none;
+}
+
+/* Multiline tooltip */
+.tooltip-multiline {
+    white-space: normal;
+    text-align: left;
+}

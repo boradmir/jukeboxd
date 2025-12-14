@@ -1,0 +1,47 @@
+/* Gold Badge Styles */
+
+.gold-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a2e;
+    border-radius: 50%;
+    cursor: default;
+    flex-shrink: 0;
+    animation: shine 3s ease-in-out infinite;
+}
+
+.gold-badge-sm {
+    width: 18px;
+    height: 18px;
+}
+
+.gold-badge-md {
+    width: 24px;
+    height: 24px;
+}
+
+.gold-badge-lg {
+    width: 32px;
+    height: 32px;
+}
+
+@keyframes shine {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+}
+
+/* Adjacent to username */
+.username-with-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}

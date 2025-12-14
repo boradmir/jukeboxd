@@ -1,0 +1,312 @@
+/* ============================================
+   Weekly Digest Component Styles
+   ============================================ */
+
+.digest-settings {
+    padding: var(--space-6);
+    background: var(--color-bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+}
+
+/* Header */
+.digest-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+.digest-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+    border-radius: var(--radius-lg);
+    color: white;
+    flex-shrink: 0;
+}
+
+.digest-title h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--space-1);
+}
+
+.digest-title p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Main Toggle */
+.digest-toggle-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+}
+
+.toggle-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 13px;
+    transition: all var(--transition-fast);
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.toggle-switch input:checked+.toggle-slider {
+    background: var(--color-accent-primary);
+}
+
+.toggle-switch input:checked+.toggle-slider:before {
+    transform: translateX(22px);
+}
+
+/* Preferences */
+.digest-preferences {
+    margin-bottom: var(--space-4);
+}
+
+.preferences-label {
+    display: block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+}
+
+.preference-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.preference-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.preference-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.preference-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent-primary);
+    cursor: pointer;
+}
+
+/* Save Button */
+.digest-save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-3);
+    background: var(--color-accent-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-bg-primary);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: var(--space-4);
+}
+
+.digest-save-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.digest-save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Preview */
+.digest-preview {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-4);
+}
+
+.digest-preview summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    list-style: none;
+}
+
+.digest-preview summary::-webkit-details-marker {
+    display: none;
+}
+
+.preview-arrow {
+    transition: transform var(--transition-fast);
+}
+
+.digest-preview[open] .preview-arrow {
+    transform: rotate(90deg);
+}
+
+.preview-content {
+    margin-top: var(--space-4);
+}
+
+/* Email Preview */
+.digest-email-preview {
+    background: #1a1a1a;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-size: var(--font-size-sm);
+}
+
+.email-header {
+    text-align: center;
+    padding: var(--space-5);
+    background: linear-gradient(135deg, #14181c, #1e2328);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.email-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-2);
+}
+
+.email-header h4 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--font-size-base);
+}
+
+.email-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+}
+
+.email-section {
+    padding: var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent-primary);
+    margin-bottom: var(--space-3);
+}
+
+.top-songs-list,
+.activity-list,
+.recommendations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-songs-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+}
+
+.song-rank {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent-secondary);
+    width: 24px;
+}
+
+.song-name {
+    flex: 1;
+    color: var(--color-text-primary);
+}
+
+.song-artist {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-xs);
+}
+
+.activity-list li,
+.recommendations-list li {
+    padding: var(--space-2) 0;
+    color: var(--color-text-secondary);
+}
+
+.email-footer {
+    padding: var(--space-4);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.email-footer p {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .digest-settings {
+        padding: var(--space-4);
+    }
+}

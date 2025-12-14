@@ -1,0 +1,150 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 404 Page */
+.not-found {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-16);
+    gap: var(--space-4);
+}
+
+.not-found-illustration {
+    width: 280px;
+    height: auto;
+    margin-bottom: var(--space-4);
+}
+
+.not-found h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    background: var(--color-accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+}
+
+.not-found p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    max-width: 400px;
+}
+
+/* Page Loader */
+.page-loader {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: var(--space-6);
+}
+
+.loader-vinyl {
+    width: 80px;
+    height: 80px;
+}
+
+.loader-vinyl .vinyl-disc {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg,
+            #1a1a2e 0deg,
+            #2a2a3e 30deg,
+            #1a1a2e 60deg,
+            #2a2a3e 90deg,
+            #1a1a2e 120deg,
+            #2a2a3e 150deg,
+            #1a1a2e 180deg,
+            #2a2a3e 210deg,
+            #1a1a2e 240deg,
+            #2a2a3e 270deg,
+            #1a1a2e 300deg,
+            #2a2a3e 330deg,
+            #1a1a2e 360deg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 0 3px rgba(0, 212, 255, 0.5),
+        0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.loader-vinyl .vinyl-disc.spinning {
+    animation: vinylSpin 2s linear infinite;
+}
+
+.loader-vinyl .vinyl-label {
+    width: 30%;
+    height: 30%;
+    background: linear-gradient(135deg, #00d4ff, #ff6b9d);
+    border-radius: 50%;
+    position: relative;
+}
+
+.loader-vinyl .vinyl-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background: var(--color-bg-primary);
+    border-radius: 50%;
+}
+
+.loader-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes vinylSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gold Button - Global Style */
+.btn-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a2e;
+    font-weight: var(--font-weight-bold);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.btn-gold:hover {
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-gold:active {
+    transform: translateY(0);
+}

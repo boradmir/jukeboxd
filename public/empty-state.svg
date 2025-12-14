@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14181c"/>
+      <stop offset="100%" stop-color="#1a1f25"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#ff6b9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="50" cy="50" r="80" fill="#00d4ff" opacity="0.05"/>
+  <circle cx="350" cy="250" r="100" fill="#ff6b9d" opacity="0.05"/>
+  
+  <!-- Vinyl record -->
+  <g transform="translate(200, 150)">
+    <!-- Outer ring -->
+    <circle r="70" fill="#1a1a2e" stroke="url(#accentGrad)" stroke-width="2"/>
+    <!-- Grooves -->
+    <circle r="60" fill="none" stroke="#2a2a3e" stroke-width="1" opacity="0.5"/>
+    <circle r="50" fill="none" stroke="#2a2a3e" stroke-width="1" opacity="0.5"/>
+    <circle r="40" fill="none" stroke="#2a2a3e" stroke-width="1" opacity="0.5"/>
+    <!-- Label -->
+    <circle r="25" fill="url(#accentGrad)"/>
+    <!-- Center hole -->
+    <circle r="5" fill="#14181c"/>
+  </g>
+  
+  <!-- Sad face on vinyl -->
+  <g transform="translate(200, 150)" fill="#14181c">
+    <circle cx="-8" cy="-5" r="3"/>
+    <circle cx="8" cy="-5" r="3"/>
+    <path d="M-10 8 Q0 4 10 8" stroke="#14181c" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Question marks -->
+  <text x="280" y="80" font-family="Arial" font-size="40" fill="url(#accentGrad)" opacity="0.3" filter="url(#glow)">?</text>
+  <text x="100" y="220" font-family="Arial" font-size="30" fill="url(#accentGrad)" opacity="0.2" filter="url(#glow)">?</text>
+</svg>

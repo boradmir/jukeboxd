@@ -1,0 +1,126 @@
+.vinyl-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.vinyl-rating-discs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.vinyl-rating-disc {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: default;
+    outline: none;
+}
+
+.vinyl-rating-disc.interactive {
+    cursor: pointer;
+}
+
+.vinyl-svg {
+    width: 100%;
+    height: 100%;
+    transition: filter var(--transition-fast);
+}
+
+/* Vinyl parts */
+.vinyl-outer {
+    fill: var(--color-bg-tertiary);
+    stroke: var(--color-text-tertiary);
+    stroke-width: 1;
+    transition: all var(--transition-fast);
+}
+
+.vinyl-groove {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 1;
+    opacity: 0.5;
+}
+
+.vinyl-groove.thin {
+    stroke-width: 0.5;
+}
+
+.vinyl-label {
+    fill: var(--color-text-tertiary);
+    transition: fill var(--transition-fast);
+}
+
+.vinyl-hole {
+    fill: var(--color-bg-primary);
+}
+
+/* Filled state */
+.vinyl-rating-disc.filled .vinyl-outer {
+    fill: var(--color-vinyl);
+    stroke: var(--color-accent-primary);
+    stroke-width: 2;
+}
+
+.vinyl-rating-disc.filled .vinyl-groove {
+    stroke: var(--color-accent-primary);
+    opacity: 0.3;
+}
+
+.vinyl-rating-disc.filled .vinyl-label {
+    fill: url(#vinylGradient);
+}
+
+/* Half state - using clip path */
+.vinyl-rating-disc.half .vinyl-outer {
+    fill: var(--color-bg-tertiary);
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+/* Interactive hover */
+.vinyl-rating-disc.interactive:hover .vinyl-svg {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+}
+
+.vinyl-rating-disc.interactive:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+/* Rating value */
+.vinyl-rating-value {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    min-width: 2.5ch;
+}
+
+/* Size variations */
+.vinyl-rating-sm .vinyl-rating-discs {
+    gap: 2px;
+}
+
+.vinyl-rating-sm .vinyl-rating-value {
+    font-size: var(--font-size-sm);
+}
+
+.vinyl-rating-lg .vinyl-rating-discs {
+    gap: var(--space-2);
+}
+
+.vinyl-rating-lg .vinyl-rating-value {
+    font-size: var(--font-size-xl);
+}
+
+.vinyl-rating-xl .vinyl-rating-discs {
+    gap: var(--space-3);
+}
+
+.vinyl-rating-xl .vinyl-rating-value {
+    font-size: var(--font-size-2xl);
+}
+
+/* SVG Gradient Definition (will be added to the page) */
+/* This is just for reference - actual gradient is inline */

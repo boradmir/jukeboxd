@@ -1,0 +1,204 @@
+.song-card {
+    position: relative;
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.song-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Album Cover */
+.song-card-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--space-3);
+}
+
+.song-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.song-card:hover .song-card-image {
+    transform: scale(1.05);
+}
+
+/* Hover Overlay */
+.song-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    pointer-events: none;
+}
+
+.song-card-overlay>* {
+    pointer-events: auto;
+}
+
+.play-button {
+    width: 56px;
+    height: 56px;
+    background: var(--color-accent-gradient);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg-primary);
+    cursor: pointer;
+    box-shadow: var(--shadow-glow-primary);
+    padding-left: 4px;
+    /* Center the play icon visually */
+}
+
+.play-button:hover {
+    box-shadow: var(--shadow-glow-gradient);
+}
+
+/* Sound Wave */
+.sound-wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 24px;
+}
+
+.sound-wave .sound-wave-bar {
+    width: 4px;
+    background: var(--color-accent-gradient);
+    border-radius: var(--radius-full);
+}
+
+/* Duration Badge */
+.song-card-duration {
+    position: absolute;
+    bottom: var(--space-2);
+    right: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(4px);
+}
+
+/* Song Info */
+.song-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.song-card-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color var(--transition-fast);
+}
+
+.song-card:hover .song-card-title {
+    color: var(--color-accent-primary);
+}
+
+.song-card-artist {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: var(--space-2);
+}
+
+/* Rating */
+.song-card-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.rating-text {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+}
+
+/* Quick Actions */
+.song-card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.action-btn:hover {
+    color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+}
+
+.action-btn.liked {
+    color: var(--color-accent-secondary);
+}
+
+.action-btn.liked:hover {
+    color: var(--color-accent-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .song-card {
+        padding: var(--space-2);
+    }
+
+    .song-card-title {
+        font-size: var(--font-size-xs);
+    }
+
+    .song-card-artist {
+        font-size: 10px;
+    }
+
+    .play-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .song-card-actions {
+        display: none;
+    }
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14181c"/>
+      <stop offset="100%" stop-color="#1a1f25"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#ff6b9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="60" cy="60" r="50" fill="#00d4ff" opacity="0.06"/>
+  <circle cx="340" cy="240" r="60" fill="#ff6b9d" opacity="0.06"/>
+  
+  <!-- Vinyl stack -->
+  <g transform="translate(200, 150)">
+    <!-- Bottom vinyl (shadow) -->
+    <ellipse cx="10" cy="15" rx="65" ry="20" fill="#1a1a2e" opacity="0.5"/>
+    <!-- Middle vinyl -->
+    <ellipse cx="5" cy="8" rx="60" ry="18" fill="#2a2a3e"/>
+    <!-- Top vinyl -->
+    <ellipse cx="0" cy="0" rx="55" ry="16" fill="#1a1a2e" stroke="url(#accentGrad)" stroke-width="1.5"/>
+    <!-- Label -->
+    <ellipse cx="0" cy="0" rx="18" ry="5" fill="url(#accentGrad)"/>
+  </g>
+  
+  <!-- Plus icon for "add" -->
+  <g transform="translate(200, 150)" filter="url(#glow)">
+    <circle r="30" fill="#14181c" stroke="url(#accentGrad)" stroke-width="2" stroke-dasharray="5 3"/>
+    <line x1="-12" y1="0" x2="12" y2="0" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="-12" x2="0" y2="12" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Floating music notes -->
+  <g fill="url(#accentGrad)" opacity="0.25">
+    <text x="100" y="80" font-size="20">♫</text>
+    <text x="280" y="100" font-size="18">♪</text>
+    <text x="70" y="220" font-size="16">♪</text>
+    <text x="320" y="180" font-size="22">♫</text>
+  </g>
+</svg>
