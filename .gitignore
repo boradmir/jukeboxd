@@ -1,3 +1,7 @@
+# Node modules
+node_modules/
+**/node_modules/
+
 # Miscellaneous
 *.class
 *.log
@@ -81,8 +85,12 @@ firebase_options.dart
 
 # Environment files
 .env
-.env.*
+.env.local
+.env.development
+.env.production
 *.env
+!.env.example
+!**/.env.example
 
 # API Keys
 **/lib/config/api_keys.dart
